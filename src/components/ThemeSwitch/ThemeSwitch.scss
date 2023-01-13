@@ -1,0 +1,37 @@
+.themeSwitch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &.dark {
+    p {
+      color: #ffffff;
+    }
+  }
+
+  &.light {
+    p {
+      color: #697c9a;
+    }
+  }
+
+  p {
+    text-transform: uppercase;
+    font-family: "Space Mono";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 19px;
+    text-align: right;
+    letter-spacing: 2.5px;
+    margin-right: 16px;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+}
