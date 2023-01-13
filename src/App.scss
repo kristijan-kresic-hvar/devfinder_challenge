@@ -1,1 +1,48 @@
+.app {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  $app: &;
 
+  &.dark {
+    background-color: #141d2f;
+  }
+
+  &.light {
+    background-color: #f6f8ff;
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: auto;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.9rem;
+
+    h1 {
+      font-family: "Space Mono", monospace;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 39px;
+      /* identical to box height */
+
+      #{$app}.dark & {
+        color: #ffffff;
+      }
+
+      #{$app}.light & {
+        color: #222731;
+      }
+    }
+  }
+}
