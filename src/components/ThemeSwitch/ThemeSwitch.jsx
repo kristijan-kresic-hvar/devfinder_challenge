@@ -13,11 +13,7 @@ function ThemeSwitch() {
   }
 
   return (
-    <button
-      type="button"
-      className={`${theme} themeSwitch`}
-      onClick={toggleTheme}
-    >
+    <button type="button" className="themeSwitch" onClick={toggleTheme}>
       <p>{themeText}</p>
       <img src={svgSRC} alt="sun" aria-hidden="true" />
     </button>
