@@ -6,18 +6,6 @@
   border: none;
   outline: none;
 
-  &.dark {
-    p {
-      color: #ffffff;
-    }
-  }
-
-  &.light {
-    p {
-      color: #697c9a;
-    }
-  }
-
   p {
     text-transform: uppercase;
     font-family: "Space Mono";
@@ -28,6 +16,14 @@
     text-align: right;
     letter-spacing: 2.5px;
     margin-right: 16px;
+
+    @at-root .dark & {
+      color: #ffffff;
+    }
+
+    @at-root .light & {
+      color: #697c9a;
+    }
   }
   img {
     width: 20px;

@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  $app: &;
+  transition: background-color 0.3s ease-in-out;
 
   &.dark {
     background-color: #141d2f;
@@ -36,11 +36,11 @@
       line-height: 39px;
       /* identical to box height */
 
-      #{$app}.dark & {
+      @at-root .dark & {
         color: #ffffff;
       }
 
-      #{$app}.light & {
+      @at-root .light & {
         color: #222731;
       }
     }
