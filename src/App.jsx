@@ -2,6 +2,7 @@ import "./App.scss";
 import useThemeStore from "./store/useThemeStore";
 import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch";
 import Search from "./components/Search/Search";
+import DevCard from "./components/DevCard/DevCard";
 
 function App() {
   const theme = useThemeStore((state) => state.theme);
@@ -15,6 +16,9 @@ function App() {
         </div>
         <div className="app__search">
           <Search />
+        </div>
+        <div className="app__devCard">
+          <DevCard />
         </div>
       </div>
     </div>
