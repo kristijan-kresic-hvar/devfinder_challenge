@@ -1,7 +1,7 @@
 import { Octokit } from "octokit";
 
 const octokit = new Octokit({
-  auth: "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",
+  auth: process.env.GITHUB_ACCESS_TOKEN,
 });
 
 export default octokit;
