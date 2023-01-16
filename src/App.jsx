@@ -9,18 +9,34 @@ import DevCard from "./components/DevCard/DevCard";
 function App() {
   const theme = useThemeStore((state) => state.theme);
 
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(null);
+  const [noResults, setNoResults] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = (username) => {
     if (!username) return;
+    setNoResults(false);
+    setLoading(true);
     octokit
       .request("GET /users/{username}", {
         username,
       })
       .then((response) => {
-        setUserData(response.data);
+        if (!response.data) {
+          setLoading(false);
+          return setNoResults(true);
+        }
+        setLoading(false);
+        return setUserData(response.data);
       })
-      .catch(() => "");
+      .catch(() => {
+        setLoading(false);
+        setNoResults(true);
+      });
+  };
+  const handleChange = () => {
+    if (noResults === false) return;
+    setNoResults(false);
   };
   return (
     <div className={`${theme} app`}>
@@ -30,10 +46,15 @@ function App() {
           <ThemeSwitch />
         </div>
         <div className="app__search">
-          <Search onSearch={handleSearch} />
+          <Search
+            onSearch={handleSearch}
+            noResults={noResults}
+            onChange={handleChange}
+            loading={loading}
+          />
         </div>
         <div className="app__devCard">
-          <DevCard data={userData} />
+          {userData && <DevCard data={userData} />}
         </div>
       </div>
     </div>
