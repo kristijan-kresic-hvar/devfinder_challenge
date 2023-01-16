@@ -1,7 +1,7 @@
 import create from "zustand";
 
 const useThemeStore = create((set) => ({
-  theme: "light",
+  theme: "dark",
   setTheme: (theme) => set({ theme }),
 }));
 

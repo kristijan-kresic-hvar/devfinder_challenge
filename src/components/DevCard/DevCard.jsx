@@ -2,6 +2,9 @@ import "./DevCard.scss";
 
 function DevCard({ data }) {
   const dimNoContent = (content) => (content ? {} : { opacity: 0.5 });
+  const blogHref = data.blog.startsWith("https://")
+    ? data.blog
+    : `https://${data.blog}`;
   return (
     <div className="devCard">
       <div className="devCard__avatar">
@@ -79,7 +82,7 @@ function DevCard({ data }) {
               }
               rel="noreferrer"
               target="_blank"
-              href={`https://${data.blog}`}
+              href={blogHref}
             >
               {data.blog || "Not available"}
             </a>

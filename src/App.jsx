@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import octokit from "./octokit";
 import useThemeStore from "./store/useThemeStore";
@@ -38,6 +38,11 @@ function App() {
     if (noResults === false) return;
     setNoResults(false);
   };
+
+  useEffect(() => {
+    handleSearch("octocat");
+  }, []);
+
   return (
     <div className={`${theme} app`}>
       <div className="app__wrapper">

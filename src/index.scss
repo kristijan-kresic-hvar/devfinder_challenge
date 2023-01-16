@@ -6,19 +6,14 @@
 
 :root {
   font-size: 16px;
-  height: 100%;
 }
 
-body {
-  height: 100%;
+body,
+html,
+#root {
   width: 100%;
-  min-height: 600px;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: "Roboto", sans-serif;
-}
-
-#root {
-  height: inherit;
-  width: inherit;
 }
