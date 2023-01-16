@@ -9,7 +9,7 @@
       #ffffff;
     background-position: 32px center;
     padding-left: 5rem;
-    padding-right: 10.25rem;
+    padding-right: 9.25rem;
     height: 69px;
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
     border-radius: 15px;
@@ -23,12 +23,23 @@
     outline: none;
     caret-color: #0079ff;
 
+    @media (max-width: 520px) {
+      background-position: 16px center;
+      padding-left: 3rem;
+      padding-right: 7.25rem;
+      font-size: 0.8125rem;
+    }
+
     @at-root .dark & {
       background: url("../../assets/icon-search.svg") no-repeat scroll 7px 7px,
         #1e2a47;
       background-position: 32px center;
       box-shadow: none;
       color: #ffffff;
+
+      @media (max-width: 520px) {
+        background-position: 16px center;
+      }
 
       &::placeholder {
         color: #ffffff;
@@ -43,6 +54,10 @@
       line-height: 25px;
       /* identical to box height, or 139% */
       color: #4b6a9b;
+
+      @media (max-width: 520px) {
+        font-size: 0.8125rem;
+      }
     }
   }
 
@@ -58,10 +73,14 @@
       font-family: "Space Mono";
       font-style: normal;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 0.9375rem;
       line-height: 22px;
       color: #f74646;
       margin-right: 24px;
+
+      @media (max-width: 520px) {
+        font-size: 0.625rem;
+      }
     }
 
     button {
@@ -80,6 +99,11 @@
       transition: background 0.2s ease-in-out;
       &:hover {
         background: #60abff;
+      }
+
+      @media (max-width: 520px) {
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
       }
     }
   }

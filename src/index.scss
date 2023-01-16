@@ -21,15 +21,3 @@ body {
   height: inherit;
   width: inherit;
 }
-
-@media (max-width: 520px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 420px) {
-  :root {
-    font-size: 12px;
-  }
-}
