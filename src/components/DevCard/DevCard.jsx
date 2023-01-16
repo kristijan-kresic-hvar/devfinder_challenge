@@ -28,7 +28,7 @@ function DevCard({ data }) {
           </div>
         </div>
         <div className="devCard__content__description">
-          <p>{data.bio}</p>
+          <p>{data.bio || "This profile has no bio"}</p>
         </div>
         <div className="devCard__content__following">
           <div className="devCard__content__following__repos">
